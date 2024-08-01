@@ -19,8 +19,7 @@ class AuthTest {
 
     @BeforeEach
     void setup() {
-        // Открываем страницу авторизации перед каждым тестом
-        open("http://localhost:9999"); // Убедитесь, что этот URL соответствует вашему приложению
+        open("http://localhost:9999");
     }
 
     @Test
