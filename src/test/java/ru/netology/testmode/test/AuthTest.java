@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 
+
 import static ru.netology.testmode.data.DataGenerator.Registration.getRegisteredUser;
 import static ru.netology.testmode.data.DataGenerator.Registration.getUser;
 import static ru.netology.testmode.data.DataGenerator.getRandomLogin;
@@ -14,7 +15,6 @@ import static ru.netology.testmode.data.DataGenerator.getRandomPassword;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.$;
-
 class AuthTest {
 
     @BeforeEach
@@ -42,9 +42,8 @@ class AuthTest {
         $("button.button").click();
         $("[data-test-id='error-notification'] .notification__content")
                 .shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"), Duration.ofSeconds(10))
-                .shouldBe(Condition.visible);
+                .shouldBe((Condition.visible));
     }
-
     @Test
     @DisplayName("Should get error message if login with blocked registered user")
     void shouldGetErrorIfBlockedUser() {
@@ -54,9 +53,8 @@ class AuthTest {
         $("button.button").click();
         $("[data-test-id='error-notification'] .notification__content")
                 .shouldHave(Condition.text("Ошибка! Пользователь заблокирован"), Duration.ofSeconds(10))
-                .shouldBe(Condition.visible);
+                .shouldBe((Condition.visible));
     }
-
     @Test
     @DisplayName("Should get error message if login with wrong login")
     void shouldGetErrorIfWrongLogin() {
@@ -67,7 +65,8 @@ class AuthTest {
         $("button.button").click();
         $("[data-test-id='error-notification'] .notification__content")
                 .shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"), Duration.ofSeconds(10))
-                .shouldBe(Condition.visible);
+                .shouldBe((Condition.visible));
+
     }
 
     @Test
@@ -80,6 +79,7 @@ class AuthTest {
         $("button.button").click();
         $("[data-test-id='error-notification'] .notification__content")
                 .shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"), Duration.ofSeconds(10))
-                .shouldBe(Condition.visible);
+                .shouldBe((Condition.visible));
     }
+
 }
