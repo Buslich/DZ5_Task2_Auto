@@ -19,7 +19,6 @@ class AuthTest {
 
     @BeforeEach
     void setup() {
-        open("http://localhost:7777");
     }
 
     @Test
